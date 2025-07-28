@@ -36,7 +36,7 @@ from src.routes.facturas import facturas_bp
 from src.utils.seed_data import create_sample_data
 
 def create_app():
-    app = Flask(__name__, static_folder='../static', static_url_path='')
+    application = Flask(__name__, static_folder='../static', static_url_path='')
 
     # Configuración
     app.config['SECRET_KEY'] = 'tu-clave-secreta-aqui'
