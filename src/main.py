@@ -36,7 +36,7 @@ from src.routes.facturas import facturas_bp
 from src.utils.seed_data import create_sample_data
 
 def create_app():
-    application = Flask(__name__, static_folder='../static', static_url_path='')
+    app = Flask(__name__, static_folder='../static', static_url_path='')
 
     # Configuración
     app.config['SECRET_KEY'] = 'tu-clave-secreta-aqui'
@@ -82,4 +82,8 @@ def create_app():
         return send_from_directory(app.static_folder, 'index.html')
 
     return app
+
+# Esta línea la necesita Gunicorn en Render:
+application = create_app()
+
 
